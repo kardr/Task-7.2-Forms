@@ -16,5 +16,17 @@ namespace Task_7._2
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string s = Convert.ToString(textBox1.Text);
+            string prepin = " ,.!:;?-";
+            string[] razd = s.Split(prepin.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+            Array.Sort(razd, (a, b) => a.Length - b.Length);
+            foreach (string w in razd)
+            {
+                textBox2.Text += "\n\r"+  w + "\n\r";
+            }
+        }
     }
 }
